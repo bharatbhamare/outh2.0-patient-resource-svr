@@ -29,14 +29,16 @@ public class PatientController {
 	}
 
 	@GetMapping("/patient/edit")
-	@PreAuthorize("hasAuthority('update_profile')")
+	@PreAuthorize("hasRole('ROLE_operator')")
+	//@PreAuthorize("hasAuthority('update_profile')")
 	public String  editPatient() {
 		return "edit patient";
 	}
 	
 	
 	@GetMapping("/patient/delete")
-	@PreAuthorize("hasAuthority('delete_profile')")
+	//@PreAuthorize("hasAuthority('delete_profile')")
+	@PreAuthorize("hasRole('ROLE_admin')")
 	public String deletePatient() {
 		return "delete patent";
 	}
