@@ -8,5 +8,5 @@ import com.triarq.obuzz.patient.models.Patients;
 @Repository
 public interface PatientRepository extends CrudRepository<Patients, String> {
 
-	
+	Patients findByid(String id);
 }
